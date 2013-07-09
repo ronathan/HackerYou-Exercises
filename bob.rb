@@ -4,9 +4,9 @@ loop do
 	user_array = user_input.split(" ")
 	user_input.delete! " "
 	bob_response = ""
-
+	user_input.downcase!
+	
 	if user_input[0] == 'b' && user_input[1] == 'r' && user_input[2] == 'o' && user_input[3] == ','
-	  user_input.downcase!
 	  user_array.each do |x| 
 	    x.gsub!('o', '0')
 	    x.gsub!('i', '1')
