@@ -7,12 +7,12 @@ class Chunky
 	end		
 
 	def number_to_delimited(number)
-      parts = number.to_s
-      parts = number.split(/(\d)(?=(\d\d\d)+(?!\d))/)
-      return parts
-    end
+    parts = number.to_s
+    parts = parts.split(/(\d)(?=(\d\d\d)+(?!\d))/)
+    return parts
+  end
 
-    def check(number)
+  def check(number)
 		if number.to_i < 0 && number.to_i > 999999999999
 			@string_array = ["error"]
 		end
@@ -29,13 +29,13 @@ class Chunky
 	end
 end
 
-loop do
-  puts "\n\nPlease enter a number between 0 and 999,999,999,999:"
-  user_input = gets.chomp
-  if user_input == 'exit'
-  	break
-  else
-    output = Chunky.new(user_input).number_split
-    print output
-  end
-end
+# loop do
+#   puts "\n\nPlease enter a number between 0 and 999,999,999,999:"
+#   user_input = gets.chomp
+#   if user_input == 'exit'
+#   	break
+#   else
+#     output = Chunky.new(user_input).number_split
+#     print output
+#   end
+# end
